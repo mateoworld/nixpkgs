@@ -5725,6 +5725,8 @@ with pkgs;
 
   ictree = callPackage ../tools/misc/ictree { };
 
+  iio-hyprland = callPackage ../tools/wayland/iio-hyprland { };
+  
   inchi = callPackage ../development/libraries/inchi { };
 
   icon-slicer = callPackage ../tools/X11/icon-slicer { };

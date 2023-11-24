@@ -27,7 +27,6 @@
 /lib/asserts.nix            @infinisil @Profpatsch
 /lib/path.*                 @infinisil @fricklerhandwerk
 /lib/fileset                @infinisil
-/doc/functions/fileset.section.md @infinisil
 
 # Nixpkgs Internals
 /default.nix                                     @Ericson2314
@@ -323,9 +322,8 @@ pkgs/applications/version-management/forgejo @bendlas @emilylange
 /pkgs/development/ocaml-modules     @ulrikstrid
 
 # ZFS
-pkgs/os-specific/linux/zfs                @raitobezarius
-nixos/lib/make-single-disk-zfs-image.nix  @raitobezarius
-nixos/lib/make-multi-disk-zfs-image.nix   @raitobezarius
+pkgs/os-specific/linux/zfs/2_1.nix        @raitobezarius
+pkgs/os-specific/linux/zfs/generic.nix    @raitobezarius
 nixos/modules/tasks/filesystems/zfs.nix   @raitobezarius
 nixos/tests/zfs.nix                       @raitobezarius
 

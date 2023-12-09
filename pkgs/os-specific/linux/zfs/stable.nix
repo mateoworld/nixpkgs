@@ -3,7 +3,6 @@
 , stdenv
 , linuxKernel
 , removeLinuxDRM ? false
-, fetchpatch
 , nixosTests
 , ...
 } @ args:
@@ -18,20 +17,20 @@ callPackage ./generic.nix args {
   # check the release notes for compatible kernels
   kernelCompatible =
     if stdenv'.isx86_64 || removeLinuxDRM
-    then kernel.kernelOlder "6.6"
+    then kernel.kernelOlder "6.7"
     else kernel.kernelOlder "6.2";
 
   latestCompatibleLinuxPackages = if stdenv'.isx86_64 || removeLinuxDRM
-    then linuxKernel.packages.linux_6_5
+    then linuxKernel.packages.linux_6_6
     else linuxKernel.packages.linux_6_1;
 
   # this package should point to the latest release.
-  version = "2.2.0";
+  version = "2.2.2";
 
   tests = [
     nixosTests.zfs.installer
     nixosTests.zfs.stable
   ];
 
-  hash = "sha256-s1sdXSrLu6uSOmjprbUa4cFsE2Vj7JX5i75e4vRnlvg=";
+  hash = "sha256-CqhETAwhWMhbld5ib3Rz1dxms+GQbLwjEZw/V7U/2nE=";
 }

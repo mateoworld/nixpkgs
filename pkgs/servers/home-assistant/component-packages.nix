@@ -2,7 +2,7 @@
 # Do not edit!
 
 {
-  version = "2023.12.1";
+  version = "2023.12.3";
   components = {
     "3_day_blinds" = ps: with ps; [
     ];
@@ -169,7 +169,8 @@
       anel-pwrctrl-homeassistant
     ];
     "anova" = ps: with ps; [
-    ]; # missing inputs: anova-wifi
+      anova-wifi
+    ];
     "anthemav" = ps: with ps; [
       anthemav
     ];

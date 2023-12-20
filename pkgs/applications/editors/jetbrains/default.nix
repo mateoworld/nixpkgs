@@ -129,7 +129,7 @@ rec {
     '';
   });
 
-  datagrip = mkJetBrainsProduct { pname = "datagrip"; };
+  datagrip = mkJetBrainsProduct { pname = "datagrip"; extraBuildInputs = [ stdenv.cc.cc ]; };
 
   dataspell = let
     libr = runCommand "libR" {} ''
@@ -249,6 +249,6 @@ rec {
 
   webstorm = mkJetBrainsProduct { pname = "webstorm"; extraBuildInputs = [ stdenv.cc.cc musl ]; };
 
-  plugins = callPackage ./plugins { };
+  plugins = callPackage ./plugins { } // { __attrsFailEvaluation = true; };
 
 }
